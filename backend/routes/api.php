@@ -5,6 +5,7 @@ use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post('/login',  [LoginController::class, 'login']);
+Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth:sanctum');
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
@@ -26,7 +30,7 @@ Route::get('/sample', function (Request $request) {
     return $request->user();
 });
 Route::prefix('working')->group(function () {
-    Route::group(['namespace' => "App\Http\Controllers"], function () {
+    Route::group(['namespace' => "App\Http\Controllers", 'middleware' => 'auth:sanctum'], function () {
         Route::apiResource('transaction', TransactionController::class);
         Route::apiResource('user', UserController::class);
         Route::apiResource('item', ItemController::class);

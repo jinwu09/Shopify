@@ -17,9 +17,9 @@ class TransactionSeeder extends Seeder
     {
         Transaction::upsert(
             [
-                ['item_id' => Item::first()->id, 'user_id' => User::first()->id, 'total' => 10],
-                ['item_id' => Item::first()->id, 'user_id' => User::first()->id, 'total' => 10],
-                ['item_id' => Item::first()->id, 'user_id' => User::first()->id, 'total' => 10],
+                ['item_id' => Item::first()->id, 'user_id' => User::first()->id, 'total' => 10, 'status' => "ongoing"],
+                ['item_id' => Item::first()->id, 'user_id' => User::first()->id, 'total' => 10, 'status' => "ongoing"],
+                ['item_id' => Item::first()->id, 'user_id' => User::first()->id, 'total' => 10, 'status' => "ongoing"],
             ],
             ['item_id', 'user_id', 'total']
         );
