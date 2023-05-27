@@ -33,6 +33,10 @@ class ItemController extends Controller
             'price' => ['required', 'decimal:0,2']
         ]);
         $user_id = Auth::id();
+
+        Item::where("id",'=',$id)->where('')
+        return response()->json(['success' => true, 'message' => "successfully store LocationLogs"]);
+
     }
     public function destroy($id)
     {

@@ -25,7 +25,7 @@ class LocationLogsSeeder extends Seeder
                 ['transaction_id' => 8,  'location_address' => fake()->sentence(10, true)],
                 ['transaction_id' => 9,  'location_address' => fake()->sentence(10, true)],
             ],
-            ['name', 'price', 'seller_id']
+            ['transaction_id', 'location_address']
         );
     }
 }
