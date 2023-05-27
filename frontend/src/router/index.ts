@@ -18,7 +18,7 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/order',
+      path: '/order/:sort',
       name: 'orders',
       component: OrderViewVue
     },

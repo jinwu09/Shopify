@@ -6,6 +6,17 @@ import { useRouter } from 'vue-router'
 const user = ref('User')
 const stocks = ref(51651)
 const totalSales = ref(101101)
+
+const router = useRouter()
+
+const GoToOnGoingOrder = () => {
+  router.push({
+    name: 'orders',
+    params: {
+      sort: 'pending'
+    }
+  })
+}
 </script>
 
 <template>
@@ -37,8 +48,10 @@ const totalSales = ref(101101)
       <div class="flex flex-col gap-3">
         <!-- check pending order -->
         <div class="flex rounded-lg shadow-md py-5 px-6 justify-between text-center">
-          <p>Check pending Order</p>
-          <button class="rounded-full shadow-md px-8 py2">Browse</button>
+          <p>Check ongoing Order</p>
+          <button class="rounded-full shadow-md px-8 py2" @click="GoToOnGoingOrder()">
+            Browse
+          </button>
         </div>
         <!-- add a new product -->
         <div class="flex rounded-lg shadow-md py-5 px-6 justify-between text-center">

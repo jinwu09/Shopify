@@ -10,7 +10,10 @@ const home = () => {
 }
 const orders = () => {
   router.push({
-    name: 'orders'
+    name: 'orders',
+    params: {
+      sort: 'all'
+    }
   })
 }
 const products = () => {

@@ -17,14 +17,14 @@ class ItemSeeder extends Seeder
         $user_id = User::first();
         Item::upsert(
             [
-                ['name' => fake()->domainName(), 'price' => 55, 'seller_id' => $user_id->id],
-                ['name' => fake()->domainName(), 'price' => 525, 'seller_id' => $user_id->id],
-                ['name' => fake()->domainName(), 'price' => 525, 'seller_id' => $user_id->id],
-                ['name' => fake()->domainName(), 'price' => 525, 'seller_id' => $user_id->id],
-                ['name' => fake()->domainName(), 'price' => 525, 'seller_id' => $user_id->id],
-                ['name' => fake()->domainName(), 'price' => 525, 'seller_id' => $user_id->id],
-                ['name' => fake()->domainName(), 'price' => 525, 'seller_id' => $user_id->id],
-                ['name' => fake()->domainName(), 'price' => 525, 'seller_id' => $user_id->id],
+                ['name' => fake()->domainName(), 'price' => 55, 'seller_id' => $user_id->id, 'description' => fake()->sentence(10, true), 'weight' => fake()->numberBetween(10, 300)],
+                ['name' => fake()->domainName(), 'price' => 525, 'seller_id' => $user_id->id, 'description' => fake()->sentence(10, true), 'weight' => fake()->numberBetween(10, 300)],
+                ['name' => fake()->domainName(), 'price' => 525, 'seller_id' => $user_id->id, 'description' => fake()->sentence(10, true), 'weight' => fake()->numberBetween(10, 300)],
+                ['name' => fake()->domainName(), 'price' => 525, 'seller_id' => $user_id->id, 'description' => fake()->sentence(10, true), 'weight' => fake()->numberBetween(10, 300)],
+                ['name' => fake()->domainName(), 'price' => 525, 'seller_id' => $user_id->id, 'description' => fake()->sentence(10, true), 'weight' => fake()->numberBetween(10, 300)],
+                ['name' => fake()->domainName(), 'price' => 525, 'seller_id' => $user_id->id, 'description' => fake()->sentence(10, true), 'weight' => fake()->numberBetween(10, 300)],
+                ['name' => fake()->domainName(), 'price' => 525, 'seller_id' => $user_id->id, 'description' => fake()->sentence(10, true), 'weight' => fake()->numberBetween(10, 300)],
+                ['name' => fake()->domainName(), 'price' => 525, 'seller_id' => $user_id->id, 'description' => fake()->sentence(10, true), 'weight' => fake()->numberBetween(10, 300)],
             ],
             ['name', 'price', 'seller_id']
         );

@@ -5,17 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Item extends Model
+class locationLogs extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name',
-        'price',
-        'seller_id',
-        'seller_id',
+        'transaction_id',
+        'location_address'
     ];
-    public function OrderedItems()
+    public function transaction()
     {
-        return $this->hasMany(orderedItems::class);
+        return $this->belongsTo(Transaction::class, "id", "transaction_id");
     }
 }

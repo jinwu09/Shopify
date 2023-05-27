@@ -15,10 +15,9 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('transaction_id');
             $table->foreign('transaction_id')->references('id')->on('transactions')->onDelete('cascade');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->unsignedBigInteger('item_id');
+            $table->foreign('item_id')->references('id')->on('items')->onDelete('cascade');
             $table->integer('quantity');
-            $table->double('total');
             $table->timestamps();
         });
     }
@@ -34,9 +33,9 @@ return new class extends Migration
             $table->dropIndex('ordered_items_transaction_id_index');
             $table->dropColumn('transaction_id');
 
-            $table->dropForeign('ordered_items_user_id_foreign');
-            $table->dropIndex('ordered_items_user_id_index');
-            $table->dropColumn('user_id');
+            $table->dropForeign('ordered_items_item_id_foreign');
+            $table->dropIndex('ordered_items_item_id_index');
+            $table->dropColumn('item_id');
         });
     }
 };

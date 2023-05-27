@@ -11,8 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('items', function (Blueprint $table) {
+        Schema::create('items', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('description');
+            $table->double('weight');
+            $table->double('price');
+            $table->unsignedBigInteger('seller_id')->nullable();
             $table->foreign('seller_id')->references('id')->on('users')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
@@ -21,6 +28,7 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::dropIfExists('items');
         Schema::table('items', function (Blueprint $table) {
             $table->dropForeign('item_seller_id_foreign');
             $table->dropIndex('item_seller_id_index');

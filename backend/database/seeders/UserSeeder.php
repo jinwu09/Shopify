@@ -17,6 +17,7 @@ class UserSeeder extends Seeder
         //
         User::upsert([
             ['name' => $name =  fake()->firstName(), 'email' => "albert@gmail.com", 'address' => 'private location', 'password' => Hash::make('albert')],
+            ['name' => $name =  fake()->firstName(), 'email' => "albert2@gmail.com", 'address' => 'private location', 'password' => Hash::make('albert')],
             ['name' => $name =  fake()->firstName(), 'email' => "$name@gmail.com", 'address' => 'private location', 'password' => Hash::make('albert')],
             ['name' => $name =  fake()->firstName(), 'email' => "$name@gmail.com", 'address' => 'private location', 'password' => Hash::make('albert')],
         ], ['name', 'email', 'address']);

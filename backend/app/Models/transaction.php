@@ -11,6 +11,12 @@ class Transaction extends Model
     protected $fillable = [
         'user_id',
         'item_id',
+        'status',
         'total'
     ];
+    public function locationLogs()
+    {
+        // return $this->belongsTo(locationLogs::class, 'user_id');
+        return $this->hasMany(locationLogs::class);
+    }
 }

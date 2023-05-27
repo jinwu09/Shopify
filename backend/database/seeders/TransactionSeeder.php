@@ -20,6 +20,12 @@ class TransactionSeeder extends Seeder
                 ['item_id' => Item::first()->id, 'user_id' => User::first()->id, 'total' => 10, 'status' => "ongoing"],
                 ['item_id' => Item::first()->id, 'user_id' => User::first()->id, 'total' => 10, 'status' => "ongoing"],
                 ['item_id' => Item::first()->id, 'user_id' => User::first()->id, 'total' => 10, 'status' => "ongoing"],
+                ['item_id' => Item::first()->id, 'user_id' => User::first()->id, 'total' => 10, 'status' => "not delivered"],
+                ['item_id' => Item::first()->id, 'user_id' => User::first()->id, 'total' => 10, 'status' => "not delivered"],
+                ['item_id' => Item::first()->id, 'user_id' => User::first()->id, 'total' => 10, 'status' => "not delivered"],
+                ['item_id' => Item::first()->id, 'user_id' => User::first()->id, 'total' => 10, 'status' => "received"],
+                ['item_id' => Item::first()->id, 'user_id' => User::first()->id, 'total' => 10, 'status' => "received"],
+                ['item_id' => Item::first()->id, 'user_id' => User::first()->id, 'total' => 10, 'status' => "received"],
             ],
             ['item_id', 'user_id', 'total']
         );
